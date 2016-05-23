@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.dizionario.model.Xmodel;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -83,6 +84,7 @@ public class DizionarioController {
     @FXML
     void createGrafo(ActionEvent event) {
     	textResult.setText("");
+    	//Task<String> task=new Task<String>(){
     	try{
     	int numero=Integer.parseInt(txtNumber.getText());
     	textResult.appendText("Numero Parole Vicine:"+x.GenerateGraph(numero).size()+ "\n");
@@ -92,6 +94,8 @@ public class DizionarioController {
     	catch(NumberFormatException nfe){
     		textResult.appendText("Errore\t101: formato dati inserito non valido");
     	}
+    
+    	
     }
 
 
